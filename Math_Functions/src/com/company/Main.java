@@ -1,9 +1,22 @@
 package com.company;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
+
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("the distance between 5 and 8 is " + distance(5,8));
+        int x = 9;
+//        int y;
+//        //y needs to be 3 if x is less than 5, and 4 otherwise
+//        if(x<5)
+//            y = 3;
+//        else
+//            y = 4;
+//
+        int y = x<5 ? 3 : 4;
+
+
     }
 
     //in the following exercises, you may not use any mathematical
@@ -30,6 +43,28 @@ public class Main {
     // x and y, and will return x raised to the power of y
     // i.e power(3,3) returns 27, power(5,0) returns 1,
     // power(0,0) return -1.
+    // write exercise 5 again, this time, you may not use for or while
+    // meaning, you may not use loops, you may not call other functions
+    //6. write a function that will take one integer parameter,
+    //   and will return the squared root of that number.
+    //i.e sqrt(9) returns 3, sqrt(10) returns 4.
+    //7. write a function that will take one integer parameters,
+    //   and will return the sum of its digits.
+    //i.e sumOfDigits(123) returns 6
+    //8. ....... and will return the largest digit of a number.
+    //i.e largestDigit(123) returns 3
+    //9. ...... and will return the number in
+    // reverse order of the digits.
+    //i.e reverseDigits(123) returns 321
+    //i.e reverseDigits(120) returns 21
+    //10. write a function that will draw a rectangle on the screen
+    //    using * (print " ") to space between *.
+    //11. do exercise 10 again, this time, there are two more parameters
+    //    x and y, x will move the rectangle right, and y,
+    //    will move the rectangle down.
+    //12. draw a circle (for Shalom), parameters: radius
+
+
 
     public static int distance(int x, int y){
         int small = x;
@@ -89,6 +124,44 @@ public class Main {
 
         return distance(x,product(quotient(x, y), y));
     }
+    /*
+    public static int power(int x, int y){
+        if(x==0){
+            if(y==0)
+                return -1;
+            return 0;
+        }
+        if(y==0 || x==1)
+            return 1;
+
+        int result = x;
+        for (int i = 1; i < y; i++) {
+            result *= x;
+        }
+        return result;
+    }
+    */
+    public static int power(int x, int y){
+        if(x==0){
+            if(y==0)
+                return -1;
+            return 0;
+        }
+        if(y==0 || x==1)
+            return 1;
+
+        if(y==1)
+            return x;
+        return  x * power(x, y-1);
+    }
+
+    //power(7,4)
+    //power(7,3)*7
+    //power(7,2)*7*7
+    //power(7,1)*7*7*7
+    //7*7*7*7
+
+
 }
 //distance(7,product(quotient(7, 3), 3));
 //distance(7,product(2, 3));
