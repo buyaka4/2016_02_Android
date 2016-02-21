@@ -110,12 +110,6 @@ public class Main {
     }
 
 
-    public static int distance(int x, int y){
-        int result = x - y;
-        if(result < 0)
-            result *= -1;
-        return result;
-    }
 
     //in the following exercises, you may not use any mathematical
     //operator, other than +. Furthermore, you may assume that the
@@ -132,5 +126,18 @@ public class Main {
     // and should return the remainder of x divided by y.
     // i.e remainder(7,3) returns 1, remainder(3,7) returns 3.
 
+    public static int distance(int x, int y){
+        int small = x;
+        int large = y;
+        if(x>y){
+            small = y;
+            large = x;
+        }
+        int result = 0;
+        while(small+result<large)
+            result++;
+
+        return result;
+    }
 
 }
