@@ -3,7 +3,9 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        drawCircle(10);
+
+
+
     }
 
     //7. write a function that will take one integer parameters,
