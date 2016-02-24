@@ -6,15 +6,6 @@ import com.sun.tools.doclets.formats.html.SourceToHTMLConverter;
 public class Main {
 
     public static void main(String[] args) {
-        int x = 9;
-//        int y;
-//        //y needs to be 3 if x is less than 5, and 4 otherwise
-//        if(x<5)
-//            y = 3;
-//        else
-//            y = 4;
-//
-        int y = x<5 ? 3 : 4;
 
 
     }
@@ -48,21 +39,14 @@ public class Main {
     //6. write a function that will take one integer parameter,
     //   and will return the squared root of that number.
     //i.e sqrt(9) returns 3, sqrt(10) returns 4.
-    //7. write a function that will take one integer parameters,
-    //   and will return the sum of its digits.
-    //i.e sumOfDigits(123) returns 6
-    //8. ....... and will return the largest digit of a number.
-    //i.e largestDigit(123) returns 3
-    //9. ...... and will return the number in
-    // reverse order of the digits.
-    //i.e reverseDigits(123) returns 321
-    //i.e reverseDigits(120) returns 21
-    //10. write a function that will draw a rectangle on the screen
-    //    using * (print " ") to space between *.
-    //11. do exercise 10 again, this time, there are two more parameters
-    //    x and y, x will move the rectangle right, and y,
-    //    will move the rectangle down.
-    //12. draw a circle (for Shalom), parameters: radius
+    //6b. do the squared root exercise again, this time,
+    // give a more precise answer, return a double with a precision
+    // of 5 places after the decimal point.
+
+
+
+
+
 
 
 
@@ -152,8 +136,83 @@ public class Main {
 
         if(y==1)
             return x;
-        return  x * power(x, y-1);
+        return  power(x, y-1) * x;
     }
+
+    /*
+    public static int sqrt(int x){
+        int result = 0;
+        while(result * result < x)
+            result++;
+        return result;
+    }
+    */
+    public static double sqrt(double x){
+        double result = 0;
+        double interval = 1.0;
+        double nextResult;
+
+        while(result * result < x) {
+            nextResult = result + interval;
+            if(nextResult * nextResult > x){
+                interval /= 10;
+                if(interval < 0.00000001)
+                    break;
+            }
+            result += interval;
+        }
+
+        return result;
+    }
+
+    public static int sumOfDigits(int x){
+        int result = 0;
+
+        while(x != 0){
+            int lastDigit = x % 10;
+            x /= 10;
+
+            result += lastDigit;
+        }
+
+
+        return result;
+    }
+
+    public static int largestDigit(int x){
+        int result = 0;
+
+        while(x != 0){
+            int lastDigit = x % 10;
+            x /= 10;
+
+            if(lastDigit>result)
+                result = lastDigit;
+        }
+
+
+        return result;
+    }
+
+
+    public static int reverseDigits(int x){
+        int result = 0;
+
+        while(x != 0){
+            int lastDigit = x % 10;
+            x /= 10;
+
+            result = result * 10 + lastDigit;
+        }
+
+
+        return result;
+    }
+
+
+
+
+
 
     //power(7,4)
     //power(7,3)*7
