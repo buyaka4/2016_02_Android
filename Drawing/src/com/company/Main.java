@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-	// write your code here
+        drawX(20);
     }
 
     //7. write a function that will take one integer parameters,
@@ -50,6 +50,17 @@ public class Main {
         }
         for (int i = 0; i < width; i++) {
             System.out.print("*");
+        }
+    }
+
+
+    public static void drawX(int size){
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                //System.out.print("("+j+","+i+")");
+                System.out.print((i==j || i==size-j-1) ? "*" : " ");
+            }
+            System.out.println();
         }
     }
 }
