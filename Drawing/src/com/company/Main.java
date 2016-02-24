@@ -20,7 +20,10 @@ public class Main {
     //11. do exercise 10 again, this time, there are two more parameters
     //    x and y, x will move the rectangle right, and y,
     //    will move the rectangle down.
-    //12. draw a circle (for Shalom), parameters: radius
+    //12. write a function that draws a big X on the screen,
+    //    using *. The function will take a parameter that will affect
+    //    the size of the X.
+    //13. draw a circle (for Shalom), parameters: radius
 
     public static void drawRectangle(int width, int height){
         for (int i = 0; i < height; i++) {
