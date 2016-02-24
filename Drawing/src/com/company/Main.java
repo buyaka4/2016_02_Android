@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        drawX(20);
+        drawCircle(10);
     }
 
     //7. write a function that will take one integer parameters,
@@ -25,8 +25,14 @@ public class Main {
     //    the size of the X.
     //13. draw a circle (for Shalom), parameters: radius
 
-    public static void drawRectangle(int width, int height){
+    public static void drawRectangle(int x, int y, int width, int height){
+        for (int i = 0; i < y; i++) {
+            System.out.println();
+        }
         for (int i = 0; i < height; i++) {
+            for (int j = 0; j < x; j++) {
+                System.out.print(" ");
+            }
             for (int j = 0; j < width; j++) {
                 System.out.print((i==0 || i==height-1 || j==0
                         || j==width-1) ? "*" : " ");
@@ -62,5 +68,23 @@ public class Main {
             }
             System.out.println();
         }
+    }
+
+    public static void drawCircle(int radius){
+        for (int i = 0; i < radius * 2 + 10; i++) {
+            for (int j = 0; j < radius * 2 + 10; j++) {
+                System.out.print(isPointOnCircle(j,i,radius) ? "*" : " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static boolean isPointOnCircle(int x, int y, int radius){
+        int deltaX = x - radius;
+        int deltaY = y - radius;
+        int distance = deltaX * deltaX + deltaY * deltaY - radius * radius;
+        if(distance < 0)
+            distance *= -1;
+        return distance < 10;
     }
 }
