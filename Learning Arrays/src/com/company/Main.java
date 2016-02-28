@@ -55,13 +55,11 @@ public class Main {
 
 */
 
-        int[] arr = new int[3];
-
-        arr[0] = 18;
-        arr[1] = 20;
-        arr[2] = 25;
-
-        
+        boolean[][] canvas = new boolean[50][80];
+        clearCanvas(canvas);
+        drawRectangle(10,5,30,10,canvas);
+        drawRectangle(13,8,30,10,canvas);
+        printCanvas(canvas);
     }
 
 
@@ -137,7 +135,31 @@ public class Main {
         }
     }
 
-    public static void stam(int[] x){
-        x[0]++;
+    public static void clearCanvas(boolean[][] canvas){
+        for (int i = 0; i < canvas.length; i++) {
+            for (int j = 0; j < canvas[i].length; j++) {
+                canvas[i][j] = false;
+            }
+        }
+    }
+
+    public static void drawRectangle(int x, int y, int width, int height, boolean[][] canvas){
+        for (int i = x; i < x + width; i++) {
+            canvas[y][i] = true;
+            canvas[y+height][i] = true;
+        }
+        for (int i = y; i <= y + height; i++) {
+            canvas[i][x] = true;
+            canvas[i][x+width] = true;
+        }
+    }
+
+    public static void printCanvas(boolean[][] canvas){
+        for (int i = 0; i < canvas.length; i++) {
+            for (int j = 0; j < canvas[i].length; j++) {
+                System.out.print(canvas[i][j] ? "*" : " ");
+            }
+            System.out.println();
+        }
     }
 }
