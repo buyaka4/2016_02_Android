@@ -7,7 +7,7 @@ public class Main {
     //   and returns the largest number.
     //   largestNumber(int[] nums){.....}
     //2. ..... and reverses the order of the numbers in the array.
-    //3. does array A contain array B ?
+    //3. position of array B within array A ?
     //    {2,67,2,4,8,5,2,9,77}    {2,4,8}
     //4. write a function that takes an array of integers as a parameter,
     //   and sorts the numbers in an ascending order.
@@ -18,6 +18,7 @@ public class Main {
 
 
         //int[] numbers = {19, 20, 15, 3};
+        /*
         int[] numbers = null;
 
 
@@ -27,7 +28,7 @@ public class Main {
         }catch (Exception ex){
             System.out.println("ooops.. houston we have a problem: " + ex);
         }
-
+        */
         /*
         try{
             int max = largestNumber(numbers);
@@ -36,7 +37,7 @@ public class Main {
             System.out.println("error: " + ex);
         }
         */
-        System.out.println("end of program");
+        //System.out.println("end of program");
 
         //int[][] y = {{6,14}, {5,89,10}, {}};
 
@@ -54,6 +55,13 @@ public class Main {
 
 */
 
+        int[] arr = new int[3];
+
+        arr[0] = 18;
+        arr[1] = 20;
+        arr[2] = 25;
+
+        
     }
 
 
@@ -84,12 +92,49 @@ public class Main {
     }
 
 
+    public static int arraySearch(int[] arr1, int[] arr2){
+        for (int i = 0; i <= arr1.length - arr2.length; i++) {
+            if(arr1[i] == arr2[0]){
+                boolean f = true;
+                for (int j = 1; j < arr2.length; j++) {
+                    if(arr1[i+j] != arr2[j]){
+                        f = false;
+                        break;
+                    }
+                }
+                if(f){
+                    return i;
+                }
+            }
+        }
+
+        return -1;
+    }
+
+
     public static int sumOfNumbers(int[] numbers){
         int sum = 0;
         for (int i = 0; i < numbers.length; i++) {
             sum += numbers[i];
         }
         return sum;
+    }
+
+    public static void sortArray(int[] numbers){
+        boolean isSorted = false;
+        int compareUpTo = numbers.length - 1;
+        while(!isSorted){
+            isSorted = true;
+            for (int i = 0; i < compareUpTo; i++) {
+                if(numbers[i] > numbers[i+1]){
+                    int temp = numbers[i];
+                    numbers[i] = numbers[i+1];
+                    numbers[i+1] = temp;
+                    isSorted = false;
+                }
+            }
+            compareUpTo--;
+        }
     }
 
     public static void stam(int[] x){
