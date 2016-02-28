@@ -16,9 +16,27 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int[] x = {19};
-        stam(x);
-        System.out.println(x);
+
+        //int[] numbers = {19, 20, 15, 3};
+        int[] numbers = null;
+
+
+        try {
+            System.out.println(numbers[3]);
+            System.out.println("after...");
+        }catch (Exception ex){
+            System.out.println("ooops.. houston we have a problem: " + ex);
+        }
+
+        /*
+        try{
+            int max = largestNumber(numbers);
+            System.out.println("the largest number is: " + max);
+        }catch (Exception ex){
+            System.out.println("error: " + ex);
+        }
+        */
+        System.out.println("end of program");
 
         //int[][] y = {{6,14}, {5,89,10}, {}};
 
@@ -36,6 +54,33 @@ public class Main {
 
 */
 
+    }
+
+
+    public static int largestNumber(int[] numbers) throws Exception{
+        if(numbers == null){
+            throw new Exception("null pointer exception");
+        }
+        if(numbers.length == 0){
+            throw new Exception("empty set");
+        }
+        int result = numbers[0];
+        for (int i = 1; i < numbers.length; i++) {
+            if(numbers[i]>result)
+                result = numbers[i];
+        }
+        return result;
+    }
+
+    //{4, 8, 15, 1, 9}
+
+    public static void reverseArray(int[] numbers){
+        int temp;
+        for (int i = 0; i < numbers.length / 2; i++) {
+            temp = numbers[i];
+            numbers[i] = numbers[numbers.length - 1 - i];
+            numbers[numbers.length - 1 - i] = temp;
+        }
     }
 
 
