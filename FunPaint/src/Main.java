@@ -1,4 +1,6 @@
 import graphicshapes.Circle;
+import graphicshapes.Rectangle;
+import graphicshapes.Shape;
 
 /**
  * Created by eladlavi on 02/03/2016.
@@ -14,9 +16,40 @@ public class Main {
         //creating an object is called: instantiation
         //from the word "instance".
         //it is also called, initialization
-        System.out.println(myCircle);
-        double a = myCircle.area();
+        //System.out.println(myCircle);
+        //double a = myCircle.area();
+        byte red = 8;
+        byte green = 20;
+        byte blue = -40;
+        myCircle.fillColor(red, green, blue);
+        myCircle.fillColor(0.8f, 12.3f, -50.14f);
 
+        Rectangle myRectangle1 = new Rectangle(34,12);
+        myRectangle1.setWidth(15);
+
+        Shape[] someShapes = {myCircle, myRectangle1};
+        System.out.println(sumOfArea(someShapes));
+
+        Circle c = new Circle(10);
+        c.costPerUnitOfArea = 2;
+        System.out.println(c.totalCost());
+
+        Circle c2 = (Circle)getShape();
+
+
+    }
+
+    public static double sumOfArea(Shape[] shapes){
+        double sum = 0.0;
+        for(Shape s : shapes){
+            sum += s.area();
+        }
+        return sum;
+    }
+
+    public static Shape getShape(){
+        Circle c = new Circle(10);
+        return c;
     }
 
 }
