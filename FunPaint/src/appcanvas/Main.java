@@ -1,7 +1,6 @@
-import graphicshapes.Circle;
-import graphicshapes.Rectangle;
-import graphicshapes.Shape;
+package appcanvas;
 
+import graphicshapes.*;
 /**
  * Created by eladlavi on 02/03/2016.
  */
@@ -18,6 +17,7 @@ public class Main {
         //it is also called, initialization
         //System.out.println(myCircle);
         //double a = myCircle.area();
+        /*
         byte red = 8;
         byte green = 20;
         byte blue = -40;
@@ -35,6 +35,20 @@ public class Main {
         System.out.println(c.totalCost());
 
         Circle c2 = (Circle)getShape();
+        */
+        Point p1 = new Point(15,4);
+        Point p2 = new Point(15,4);
+
+        boolean isEqual = p1.equals(p2);
+        System.out.println(isEqual);
+
+        Shape s = new Shape() {
+            @Override
+            public double area() {
+                return 0;
+            }
+        };
+
 
 
     }

@@ -9,7 +9,7 @@ public abstract class Shape {
 
     public abstract double area();
 
-    public double totalCost(){
+    public final double totalCost(){
         return costPerUnitOfArea * area();
     }
 

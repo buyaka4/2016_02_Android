@@ -1,3 +1,5 @@
+package appcanvas;
+
 /**
  * Created by eladlavi on 06/03/2016.
  */
@@ -22,7 +24,7 @@ public class Point3D extends Point {
     }
 
     @Override
-    public String toString() {
-        return super.toString()+","+getZpos()
+    protected String commaSeparatedComponents() {
+        return super.commaSeparatedComponents() + "," + zPos;
     }
 }

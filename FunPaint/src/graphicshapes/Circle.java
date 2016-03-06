@@ -1,5 +1,7 @@
 package graphicshapes;
 
+import static java.lang.Math.PI;
+
 
 /**
  * Created by eladlavi on 02/03/2016.
@@ -43,7 +45,7 @@ public class Circle extends Shape {
         //(static means it belongs to the class as appose to
         // non-static which belongs to an object created from
         // the class).
-        return Math.PI * this.radius * this.radius;
+        return PI * this.radius * this.radius;
     }
 
     public void fillColor(byte red, byte green, byte blue){

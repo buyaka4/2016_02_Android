@@ -21,8 +21,10 @@ public class Main {
 
         //((Dog)a).bark();
 
-        Cat myCat = (Cat)a;
-        myCat.growl();
+        if(a instanceof Cat) {
+            Cat myCat = (Cat) a;
+            myCat.growl();
+        }
 
 
         //Circle c3 = (Circle)a;
@@ -35,6 +37,38 @@ public class Main {
 
         //but, when a method is invoked, the method that is actually invoked
         //is determined by the type of the actual object. not by the pointer.
+
+
+        Dog d2 = new Dog(){
+            @Override
+            void bark() {
+                System.out.println("bfff bfff...");
+            }
+        };
+        d2.bark();
+
+
+        Citizen john = new Citizen("John", "Smith");
+        Citizen adam = new Citizen("Adam", "Price");
+        System.out.println(john);
+        System.out.println(adam);
+
+
+
+        int x = 6;
+        switch (x){
+            case 7:
+                System.out.println("7");
+                break;
+            case 6:
+                System.out.println("6");
+                break;
+            case 5:
+                System.out.println("5");
+                break;
+            default:
+                System.out.println("other");
+        }
 
     }
 
@@ -123,7 +157,33 @@ class Circle{
 
 }
 
+class Citizen{
+    private String firstName, lastName;
+    private final int nationalId;
+    private static int counter = 0;
 
+
+    static {
+        int sum = 0;
+        for (int i = 0; i < 50; i++) {
+            sum += i;
+        }
+        counter  = sum;
+    }
+
+
+    public Citizen(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        nationalId = ++counter;
+    }
+
+    @Override
+    public String toString() {
+        return "Citizen- first name: " + firstName +
+                " last name: " + lastName + " id: " + nationalId;
+    }
+}
 
 
 

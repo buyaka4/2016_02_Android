@@ -1,3 +1,5 @@
+package appcanvas;
+
 /**
  * Created by eladlavi on 06/03/2016.x
  */
@@ -36,6 +38,24 @@ public class Point {
 
     @Override
     public String toString() {
-        return "("+xPos+","+yPos+")";
+        return "("+commaSeparatedComponents()+")";
+    }
+
+    protected String commaSeparatedComponents(){
+        return xPos+","+yPos;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null)
+            return false;
+        if(this == obj)
+            return true;
+        if(obj instanceof Point){
+            Point other = (Point)obj;
+            return other.xPos == this.xPos && other.yPos == this.yPos;
+        }
+        return false;
     }
 }
