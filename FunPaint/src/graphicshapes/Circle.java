@@ -12,7 +12,7 @@ public class Circle extends Shape {
     //private int x;
     //private int y;
     private Point center;
-    private int radius;
+    private int _radius;
 
     private final static int DEFAULT_X = 20;
     private final static int DEFAULT_Y = 20;
@@ -27,7 +27,7 @@ public class Circle extends Shape {
         //this.y = y;
         this.center = this.new Point(x, y);
         if(radius >= 0)
-            this.radius = radius;
+            this._radius = radius;
     }
 
     public Circle(int x, int y){
@@ -49,7 +49,7 @@ public class Circle extends Shape {
         //(static means it belongs to the class as appose to
         // non-static which belongs to an object created from
         // the class).
-        return PI * this.radius * this.radius;
+        return PI * this._radius * this._radius;
     }
 
     public void fillColor(byte red, byte green, byte blue){
@@ -62,7 +62,7 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        return "center = " + center.toString() + " and radius = " + radius;
+        return "center = " + center.toString() + " and radius = " + _radius;
     }
 
 
