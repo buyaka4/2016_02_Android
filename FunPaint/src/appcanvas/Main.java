@@ -8,10 +8,10 @@ public class Main {
 
     public static void main(String[] args){
         //creating a reference/pointer:
-        Circle myCircle;
+        //Circle myCircle;
         //create an object of type Circle, and making
         //out reference point to the newly created object.
-        myCircle = new Circle();
+        //myCircle = new Circle();
         //creating an object is called: instantiation
         //from the word "instance".
         //it is also called, initialization
@@ -36,6 +36,7 @@ public class Main {
 
         Circle c2 = (Circle)getShape();
         */
+
         Point p1 = new Point(15,4);
         Point p2 = new Point(15,4);
 
@@ -48,6 +49,15 @@ public class Main {
                 return 0;
             }
         };
+        //Shape s2 = s;
+        byte b = 127;
+        int x = b; //implicit cast
+        byte b2 = (byte)x; //explicit cast
+        Shape.Color whiteColor =
+                new Shape.Color(b, b, b, b);
+        s.setColor(whiteColor);
+
+
 
 
 
